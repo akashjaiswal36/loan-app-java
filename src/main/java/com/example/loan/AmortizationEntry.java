@@ -1,3 +1,5 @@
+package com.example.loan;
+
 public class AmortizationEntry {
     private int month;
     private double emi, interest, principal, remaining;
@@ -10,10 +12,23 @@ public class AmortizationEntry {
         this.remaining = remaining;
     }
 
-    // Getters
-    public int getMonth() { return month; }
-    public double getEmi() { return emi; }
-    public double getInterest() { return interest; }
-    public double getPrincipal() { return principal; }
-    public double getRemaining() { return remaining; }
+    public int getMonth() {
+        return month;
+    }
+
+    public double getEmi() {
+        return emi;
+    }
+
+    public double getInterest() {
+        return interest;
+    }
+
+    public double getPrincipal() {
+        return principal;
+    }
+
+    public double getRemaining() {
+        return remaining;
+    }
 }
