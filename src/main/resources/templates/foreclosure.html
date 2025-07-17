@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Foreclosure Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4faff;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #1a73e8;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        .btn {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background-color: #1a73e8;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #155ab6;
+        }
+        .results {
+            margin-top: 30px;
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .results li {
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Loan Foreclosure Calculation</h2>
+        <form action="/calculate_foreclosure" method="post">
+            <label>Principal Amount:</label>
+            <input type="number" name="principal" required>
+
+            <label>Annual Interest Rate (e.g. 0.15 for 15%):</label>
+            <input type="number" step="0.01" name="rate" required>
+
+            <label>Loan Tenure (in months):</label>
+            <input type="number" name="months" required>
+
+            <label>Foreclosure Month:</label>
+            <input type="number" name="foreclose_month" required>
+
+            <input type="submit" class="btn" value="Calculate Foreclosure">
+        </form>
+
+        <div class="results" th:if="${results != null}">
+            <h3>Foreclosure Summary (Month <span th:text="${results.month}"></span>)</h3>
+            <ul>
+                <li>Remaining Balance: ₹<span th:text="${results.remaining_balance}"></span></li>
+                <li>Foreclosure Charge (4%): ₹<span th:text="${results.charge}"></span></li>
+                <li>GST on Foreclosure Charge (18%): ₹<span th:text="${results.gst}"></span></li>
+                <li><strong>Total Foreclosure Amount: ₹<span th:text="${results.total}"></span></strong></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
