@@ -40,5 +40,7 @@ jobs:
           mkdir -p manifests
           cp original_manifest/* manifests/
           sed -i "s/IMAGE_TAG/${{ github.run_number }}/g" ./manifests/deployment.yaml
-
+          git add manifests/deployment.yaml
+          git commit -m "Add Kubernetes manifests"
+          git push
 
