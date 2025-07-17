@@ -21,4 +21,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ajs3ra8/loan-app-java:${{ github.build-number }}
+          tags: ajs3ra8/loan-app-java:${{ github.run_number }}
+
