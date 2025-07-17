@@ -38,7 +38,7 @@ jobs:
       - name: Create manifest
         run: |
           mkdir -p ./manifests
-          cp original_manifest/* ./manifests/
+          cp ./original_manifest/* ./manifests/
           sed -i "s/IMAGE_TAG/${{ github.run_number }}/g" ./manifests/deployment.yaml
 
 
