@@ -8,6 +8,9 @@ on:
       - '.manifest/**'
       - '.original_manifest/**'
 
+permissions:
+  contents: write 
+
 jobs:
   docker:
     runs-on: ubuntu-latest
