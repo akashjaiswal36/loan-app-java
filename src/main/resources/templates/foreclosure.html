@@ -86,7 +86,11 @@
                 <li>GST on Foreclosure Charge (18%): ₹<span th:text="${results.gst}"></span></li>
                 <li><strong>Total Foreclosure Amount: ₹<span th:text="${results.total}"></span></strong></li>
             </ul>
-        </div>
+        </div>  
+        <!-- ✅ Back to Home Button -->
+        <form action="/" method="get">
+            <input type="submit" value="⬅️ Back to Main Page">
+        </form>
     </div>
 </body>
 </html>
