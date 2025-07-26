@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: loan-java
-        image: ajs3ra8/loan-app-java:20
+        image: ajs3ra8/loan-app-java:21
         ports:
         - containerPort: 8080
 ---
